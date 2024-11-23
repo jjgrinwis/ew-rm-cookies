@@ -30,7 +30,7 @@ export async function onOriginRequest(request: EW.IngressOriginRequest) {
 
       // if we have some cookies left, reset the cookie header otherwise just delete the cookie header
       if (remainingCookiesHeader) {
-        request.setHeader("cookie", cookies.toHeader());
+        request.setHeader("cookie", remainingCookiesHeader);
       } else {
         request.removeHeader("cookie");
       }
