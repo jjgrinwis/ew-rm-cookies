@@ -3,15 +3,14 @@ Example Akamai EdgeWorker to remove some cookies before sending them to origin.
 */
 import { Cookies } from "cookies";
 import { logger } from "log";
-// our list of cookies we want to remove
-const cookieList = ["remove_me", "remove_me_2"];
+import { cookieList } from "./cookieList.js";
 /*
 Only making changes when request is going to origin
 https://techdocs.akamai.com/edgeworkers/docs/event-handler-functions#onoriginrequest
 */
 export async function onOriginRequest(request) {
-    // lookup cookie header, undefined it there are not cookies
-    const cookieHeader = request.getHeader("Cookie");
+    // lookup cookie header, undefined it there are no cookies
+    const cookieHeader = request.getHeader("cookie");
     // only try to delete cookies if there is a cookie object
     if (cookieHeader) {
         try {
@@ -19,7 +18,7 @@ export async function onOriginRequest(request) {
             const cookies = new Cookies(cookieHeader);
             // Loop through each cookie name in `cookieList` and delete it
             for (const cookieName of cookieList) {
-                logger.info(`removing some cookie ${cookieName}`);
+                //logger.info(`Attempting to delete cookie ${cookieName}`);
                 cookies.delete(cookieName);
             }
             // create our new cookie header

@@ -3,9 +3,7 @@ Example Akamai EdgeWorker to remove some cookies before sending them to origin.
 */
 import { Cookies } from "cookies";
 import { logger } from "log";
-
-// our list of cookies we want to remove
-const cookieList = ["remove_me", "remove_me_2"];
+import { cookieList } from "./cookieList.js";
 
 /*
 Only making changes when request is going to origin
