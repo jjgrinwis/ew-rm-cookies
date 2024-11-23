@@ -20,11 +20,11 @@ export async function onOriginRequest(request: EW.IngressOriginRequest) {
       const cookies = new Cookies(cookieHeader);
 
       // Loop through each cookie name in `cookieList` and delete it
+      // for...of loop is a modern and concise way to iterate through the values of an array.
       for (const cookieName of cookieList) {
-        //logger.info(`Attempting to delete cookie ${cookieName}`);
+        //logger.debug(`Attempting to delete cookie ${cookieName}`);
         cookies.delete(cookieName);
       }
-
       // create our new cookie header
       const remainingCookiesHeader = cookies.toHeader();
 
