@@ -1,7 +1,9 @@
-# 103 Early Hints via EdgeWorker
+# Remove some Cookies
 
 A little Akamai EdgeWorker script to remove some cookies before sending request to the origin.
 This handler will be attached to the onOriginRequest handler.
+
+In this version, we removed the cookieList from the main code and used a separate file for it.
 
 ## Create .edgerc credentials
 
@@ -57,13 +59,10 @@ npm run build
 This will run some scripts and will upload your EdgeWorker package in your account and will activate it on Akamai staging platform by default.
 When this is done, just update your CDN delivery configuration to start this EdgeWorker based on certain criteria like path or hostname.
 
-```
+
 ### Debugging
 If you need to do some EdgeWorker debugging, just generate an EdgeWorker debug token.
 ```
-
 npm run generate-token
-
 ```
 You can use that token in the Akamai-EW-Trace request header together with other [EdgeWorkers Pragma debug headers](https://techdocs.akamai.com/edgeworkers/docs/enable-enhanced-debug-headers) like *akamai-x-ew-debug-subs*
-```
