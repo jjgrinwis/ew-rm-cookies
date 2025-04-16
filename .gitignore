@@ -2,4 +2,5 @@ dist/
 built/
 node_modules/
 *.log
+package-lock.json
 
