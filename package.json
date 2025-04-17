@@ -4,12 +4,12 @@
   "description": "remove some cookies before sending them to origin",
   "main": "main.ts",
   "config": {
-    "ewid": "90968",
-    "edgerc_section": "betajam",
+    "ewid": "",
+    "edgerc_section": "",
     "description": "remove some cookies before sending them to origin",
     "ew_name": "ew-rm-cookies",
-    "tier": "200",
-    "ew_group_id": "48668"
+    "tier": "100",
+    "ew_group_id": ""
   },
   "scripts": {
     "build": "npm run build-ts",
