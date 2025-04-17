@@ -1,7 +1,9 @@
 # Remove some Cookies
 
 A little Akamai EdgeWorker script to remove some cookies before sending request to the origin.
-This handler will be attached to the onOriginRequest handler.
+This handler will be attached to the [onOriginRequest](https://techdocs.akamai.com/edgeworkers/docs/event-handler-functions#onoriginrequest) event.
+![image](https://github.com/user-attachments/assets/106f5458-88fd-4f7e-b20a-105a10abcf65)
+
 
 In this version, we removed the cookieList from the main code and used a separate file for it.
 
